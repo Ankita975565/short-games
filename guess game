@@ -1,0 +1,22 @@
+import random
+while True:
+    number = random.randint(1, 20)
+    tries = 0
+    maximum_tries = 5
+    print("\nGuess the number between 1 and 20. You have 5 tries! 🎯")
+    while tries < maximum_tries:
+        guess = int(input("Your guess: "))
+        tries += 1
+        if guess < number:
+            print("Too low! 📉")
+        elif guess > number:
+            print("Too high! 📈")
+        else:
+            print(f"🎉 Congratulations! You guessed it in {tries} tries 😎")
+            break
+    else:
+        print(f"😢 Sorry! The number was {number}.")
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+    if play_again != "yes":
+        print("Thanks for playing! 😁")
+        break
